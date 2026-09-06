@@ -104,7 +104,35 @@
   .modules li a.active .dot{
     background:var(--coral); box-shadow:0 0 0 3px rgba(255,93,93,0.25);
   }
-  @media (max-width:640px){ .modules{ display:none; } }
+  .skip-link{
+    position:fixed; top:-60px; left:12px; z-index:300;
+    background:var(--coral); color:var(--ink); font-weight:700;
+    padding:10px 16px; border-radius:8px; font-family:'JetBrains Mono', monospace; font-size:0.8rem;
+    transition:top 0.2s ease;
+  }
+  .skip-link:focus{ top:12px; }
+
+  .menu-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0;
+  }
+  .menu-toggle span{ display:block; width:100%; height:2px; background:var(--text-hi); border-radius:2px; transition:transform 0.25s ease, opacity 0.25s ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  @media (max-width:640px){
+    .menu-toggle{ display:flex; }
+    .modules{
+      position:fixed; top:56px; left:0; right:0; z-index:99;
+      flex-direction:column; gap:0; background:rgba(20,19,43,0.97); backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height 0.3s ease;
+    }
+    .modules.open{ max-height:320px; }
+    .modules li{ width:100%; }
+    .modules li a{ padding:16px 28px; width:100%; }
+  }
 
   /* ---------- SECTIONS BASE ---------- */
   section{ padding:120px 0 60px; position:relative; }
