@@ -4,11 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rudra Narayan Bishoyi — Software Engineer</title>
+<meta name="description" content="Portfolio of Rudra Narayan Bishoyi, a Computer Science graduate building software with Python, Java, SQL and the modern web stack — hotel management systems, case-record databases, and more.">
+<meta name="theme-color" content="#14132B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rudra Narayan Bishoyi — Software Engineer">
+<meta property="og:description" content="Computer Science graduate building software that keeps real-world operations running smoothly — from hotel bookings to case records.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rudra Narayan Bishoyi — Software Engineer">
+<meta name="twitter:description" content="Computer Science graduate building software with Python, Java, SQL and the modern web stack.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2314132B%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 font-family=%22monospace%22 font-weight=%22700%22 fill=%22%23FF5D5D%22 text-anchor=%22middle%22>R</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rudra Narayan Bishoyi",
+  "jobTitle": "Software Engineer",
+  "email": "mailto:ultronrudra12345@gmail.com",
+  "url": "https://github.com/ultrongaming",
+  "sameAs": [
+    "https://github.com/ultrongaming",
+    "https://www.linkedin.com/in/rudra-bishoyi-94a9462a3/",
+    "https://www.instagram.com/ultron__gaming1/?hl=en"
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#hero">Skip to content</a>
 
 <div class="progress-bar" id="progressBar"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
@@ -16,13 +42,18 @@
 <div class="statusbar">
   <div class="statusbar-inner">
     <div class="logo">RNB<span>_</span>SYS</div>
-    <ul class="modules">
-      <li><a href="#about" data-nav><span class="dot"></span>ABOUT</a></li>
-      <li><a href="#skills" data-nav><span class="dot"></span>SKILLS</a></li>
-      <li><a href="#projects" data-nav><span class="dot"></span>PROJECTS</a></li>
-      <li><a href="#certificates" data-nav><span class="dot"></span>CERTS</a></li>
-      <li><a href="#contact" data-nav><span class="dot"></span>CONTACT</a></li>
-    </ul>
+    <nav aria-label="Primary">
+      <ul class="modules" id="navModules">
+        <li><a href="#about" data-nav><span class="dot"></span>ABOUT</a></li>
+        <li><a href="#skills" data-nav><span class="dot"></span>SKILLS</a></li>
+        <li><a href="#projects" data-nav><span class="dot"></span>PROJECTS</a></li>
+        <li><a href="#certificates" data-nav><span class="dot"></span>CERTS</a></li>
+        <li><a href="#contact" data-nav><span class="dot"></span>CONTACT</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navModules" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </div>
 
@@ -234,7 +265,7 @@
 </section>
 
 <footer>
-  built &amp; run by <b>Rudra Narayan Bishoyi</b> · © 2026
+  built &amp; run by <b>Rudra Narayan Bishoyi</b> · © <span id="year">2026</span>
 </footer>
 
 </main>
