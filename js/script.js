@@ -12,6 +12,28 @@
     setInterval(cycleTerm, 2200);
   }
 
+  // Dynamic footer year
+  const yearEl = document.getElementById('year');
+  if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navModules = document.getElementById('navModules');
+  if(menuToggle && navModules){
+    menuToggle.addEventListener('click', ()=>{
+      const isOpen = navModules.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+    navModules.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        navModules.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+  }
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
@@ -28,8 +50,8 @@
     entries.forEach(entry=>{
       const link = document.querySelector(`[data-nav][href="#${entry.target.id}"]`);
       if(entry.isIntersecting){
-        navLinks.forEach(l=>l.classList.remove('active'));
-        if(link) link.classList.add('active');
+        navLinks.forEach(l=>{ l.classList.remove('active'); l.removeAttribute('aria-current'); });
+        if(link){ link.classList.add('active'); link.setAttribute('aria-current', 'true'); }
       }
     });
   }, { rootMargin: '-40% 0px -50% 0px' });
